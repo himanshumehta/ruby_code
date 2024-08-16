@@ -1,0 +1,19 @@
+Example 1: Custom Constraint for JSON Serialization:
+
+type JSONer interface {
+    MarshalJSON() ([]byte, error)
+}
+
+func writeToJSON[T JSONer](data []T, filename string) error {
+    // ... code to write data to JSON file using MarshalJSON
+}
+
+Example 2: Custom Constraint for Sorting:
+
+type Sortable interface {
+    Less(other interface{}) bool
+}
+
+func sort[T Sortable](data []T) {
+    // ... sorting algorithm using Less method for comparisons
+}

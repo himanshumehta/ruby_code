@@ -1,0 +1,36 @@
+
+LLM text
+Explain problem statement and share ruby code solution from non optimised to most optimised and explanation
+
+Two Sum Core logic: Use a hash map to store complement values. - Solved
+
+Valid Anagram Core logic: Compare character frequency counts. - Solved
+
+Group Anagrams Core logic: Use sorted strings as hash map keys.
+
+Explain problem statement and share ruby code solution from non optimised to most optimised and explanation
+Top K Frequent Elements Core logic: Use a hash map and bucket sort.
+
+Product of Array Except Self Core logic: Use prefix and suffix products.
+
+Longest Consecutive Sequence Core logic: Use a hash set for O(1) lookups.
+
+Subarray Sum Equals K Core logic: Use cumulative sum and a hash map.
+
+Longest Substring Without Repeating Characters Core logic: Sliding window with a hash map.
+
+Minimum Window Substring Core logic: Sliding window with two hash maps.
+
+Find All Anagrams in a String Core logic: Sliding window with character frequency counts.
+
+LRU Cache Core logic: Combine hash map and doubly linked list.
+
+Merge Intervals Core logic: Sort intervals and merge overlapping ones.
+
+Insert Interval Core logic: Iterate and handle three cases (before, overlap, after).
+
+Set Matrix Zeroes Core logic: Use first row and column as markers.
+
+Spiral Matrix Core logic: Simulate the spiral traversal with boundaries.
+
+

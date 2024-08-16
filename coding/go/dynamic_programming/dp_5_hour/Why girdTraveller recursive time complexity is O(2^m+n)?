@@ -1,0 +1,12 @@
+What is girdTraveller recursive time complexity for F(m,n)?
+If m > n - O(2^m) 
+If n > m - O(2^n) 
+
+The time complexity of the gridTraveler recursive function F(m, n) is O(2^(m+n)), regardless of whether m > n or n > m.
+
+Here's why:
+
+Recursive Structure: The function calls itself twice for each cell, once for moving right and once for moving down. This creates a branching recursion tree.
+Height of Recursion Tree: The height of this tree is determined by the combined number of rows and columns, as each level represents moving either one row down or one column right.
+Exponential Number of Nodes: At each level, the number of nodes in the tree doubles, leading to exponential growth.
+Total Function Calls: The total number of function calls (and thus the time complexity) is proportional to the number of nodes in the tree, which is 2^(m+n) in the worst case.

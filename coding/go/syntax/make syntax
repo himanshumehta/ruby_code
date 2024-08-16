@@ -1,0 +1,17 @@
+Syntax of make
+The make function can have different parameters based on what it is initializing:
+
+Slices: make([]Type, length, [capacity])
+
+Type is the element type of the slice.
+length is the initial length of the slice (the number of elements it contains).
+capacity (optional) is the total size of the underlying array. If omitted, the capacity is set to the length. Specifying a capacity can be more efficient when you know you'll be adding many elements to the slice because it minimizes the number of reallocations required as the slice grows.
+Maps: make(map[KeyType]ValueType, [initialCapacity])
+
+KeyType is the type of the map keys.
+ValueType is the type of the map values.
+initialCapacity (optional) is a hint about the number of elements that will be added to the map. It's not a limit, and the map can grow beyond this size.
+Channels: make(chan Type, [bufferSize])
+
+Type is the type of the elements that the channel can transport.
+bufferSize (optional) specifies the size of the channel's buffer. A bufferSize of 0 (or omitted) creates an unbuffered channel, while specifying a size creates a buffered channel.

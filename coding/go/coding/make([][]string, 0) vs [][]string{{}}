@@ -1,0 +1,4 @@
+In summary, the key difference lies in the initial state of the created slice:
+
+make([][]string, 0) creates an empty slice with no initial elements.
+[][]string{{}} creates a slice with one element, and that element is an empty slice.

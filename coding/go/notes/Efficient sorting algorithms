@@ -1,0 +1,17 @@
+Efficient sorting algorithms
+
+Merge sort: Merge sort is a divide-and-conquer algorithm that works by recursively breaking down a list into smaller and smaller sublists until each sublist contains only one element. The algorithm then merges the sorted sublists back together to form a sorted list. Merge sort has a time complexity of O(n log n) in the average and worst cases.
+Heap sort: Heap sort is a comparison-based sorting algorithm that builds a heap data structure and then repeatedly removes the largest element from the heap, adding it to the sorted list. Heap sort has a time complexity of O(n log n) in the average and worst cases.
+Quicksort: Quicksort is a divide-and-conquer algorithm that works by recursively partitioning a list around a pivot element. The algorithm then recursively sorts the two partitions. Quicksort has a time complexity of O(n log n) in the average case, but it can have a time complexity of O(n^2) in the worst case.
+Bad sorting algorithm
+
+Bubble sort: Bubble sort is a simple sorting algorithm that works by repeatedly comparing adjacent elements in a list and swapping them if they are in the wrong order. Bubble sort has a time complexity of O(n^2) in the average and worst cases.
+Example:
+
+Imagine that you have a list of 100 random numbers and you want to sort it in ascending order. Here is a comparison of how long it would take to sort the list using each of the algorithms above:
+
+Algorithm	Average time	Worst time
+Merge sort	0.01 seconds	0.01 seconds
+Heap sort	0.02 seconds	0.02 seconds
+Quicksort	0.01 seconds	0.02 seconds
+Bubble sort	10 seconds	10 seconds

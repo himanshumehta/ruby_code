@@ -1,0 +1,13 @@
+@startuml lld
+!theme vibrant
+left to right direction
+skinparam packageStyle rectangle
+actor Guest
+actor Customer
+actor Admin
+rectangle UseCase { 
+Guest --> (Search)
+(Search) <-- Customer
+(CRUD) <--- Admin
+}
+@enduml

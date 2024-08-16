@@ -1,0 +1,12 @@
+In Go, the expression x.(type) is used within a type switch to perform a type assertion and obtain the dynamic type of the value stored in the interface variable x. This is a special syntax that can only be used inside a switch statement that is specifically designed for type switching.
+
+func printType(x interface{}) {
+    switch value := x.(type) {
+    case int:
+        fmt.Println("Integer:", value)
+    case string:
+        fmt.Println("String:", value)
+    default:
+        fmt.Println("Unknown Type")
+    }
+}

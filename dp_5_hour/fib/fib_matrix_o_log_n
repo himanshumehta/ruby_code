@@ -1,0 +1,51 @@
+
+
+Logical Flow
+Base Matrix for Fibonacci Computation: The matrix 
+[
+	[1, 1]
+	[1, 0]
+]
+
+is the foundation. When powered to n-1, its top left element gives the nth Fibonacci number.
+
+Matrix Exponentiation: The code efficiently computes powers of this base matrix using recursion and squaring, which is much faster than naive multiplication.
+
+Extracting the Fibonacci Number: The nth Fibonacci number is retrieved from the powered matrix, demonstrating the power of matrix operations in solving algorithmic problems efficiently.
+
+This approach is vastly more efficient than iterative or simple recursive methods for large n, offering a time complexity of O(log n) due to the exponentiation by squaring method.
+
+
+Code 
+
+def multiply_matrices(a, b)
+  result = Array.new(2) { Array.new(2, 0) }
+  
+  (0..1).each do |i|
+    (0..1).each do |j|
+      (0..1).each do |k|
+        result[i][j] += a[i][k] * b[k][j]
+      end
+    end
+  end
+  result
+end
+
+def matrix_power(matrix, n)
+  return matrix if n == 1
+  temp = matrix_power(matrix, n / 2)
+  temp = multiply_matrices(temp, temp)
+  
+  return temp if n.even?
+  multiply_matrices(temp, matrix)
+end
+
+def fib_matrix_exponentiation(n)
+  base = [[1, 1], [1, 0]]
+  return 0 if n == 0
+  return 1 if n == 1  # Handle case when n == 1
+  power = matrix_power(base, n - 1)
+  power[0][0]
+end
+
+puts fib_matrix_exponentiation(5)  # Correct output should be 55, not 8.

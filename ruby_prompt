@@ -1,0 +1,36 @@
+Code Comments: Please add comprehensive comments throughout the code. Each method should have a brief description explaining its purpose, the parameters it accepts, and what it returns. Important lines or blocks of code should also have inline comments explaining how they contribute to the method's overall functionality.
+
+I have a Ruby code that I need reviewed and updated. The current version works, but I want it to reflect the expertise and finesse of an advanced Ruby developer with over a decade of experience. Specifically, I'm looking for the following improvements:
+
+Advanced Ruby Syntax: Wherever possible, update the code to use more advanced Ruby syntax and features. This could include but is not limited to:
+
+Utilizing symbols and immutable strings efficiently.
+Employing meta-programming concepts where applicable.
+Making use of blocks, procs, and lambdas for more concise and flexible code.
+Refactoring loops and iterators to use more idiomatic Ruby constructs.
+Applying Ruby's Enumerable methods creatively to simplify complex logic.
+Code Structure and Organization: Suggest improvements to the code structure that might make it more modular or easier to maintain. This could involve:
+
+Breaking down large methods into smaller, more focused helper methods.
+Organizing code into modules or classes where it enhances readability and reusability.
+Implementing design patterns that could improve the code's efficiency, readability, or scalability.
+Performance Optimization: Identify any potential bottlenecks or inefficient pieces of code and suggest optimizations. This could include:
+
+Replacing inefficient algorithms with more efficient ones.
+Reducing unnecessary computation or database queries.
+Optimizing data structures for faster access or modification.
+Best Practices: Ensure the code adheres to Ruby best practices regarding syntax, naming conventions, and overall structure. Highlight any deviations and suggest improvements.
+
+Please proceed by reviewing the below project overview and Ruby code provided and making the necessary adjustments to elevate its quality, readability, and efficiency to expert levels and share only code and no comments in output and only share any other text if its very much necessary, Also note I am visual learner
+```
+def gridTraveller_memo(n,m,memo={})
+  return 1 if m == 1 && n == 1
+  return 0 if m == 0 || n == 0
+  return memo["#{n},#{m}"] || memo["#{m},#{n}"] if memo["#{n},#{m}"] != nil
+
+  memo["#{n},#{m}"] = gridTraveller_memo(n-1,m) + gridTraveller_memo(n,m-1)
+  memo["#{m},#{n}"] = memo["#{n},#{m}"]
+  return memo["#{n},#{m}"]
+end
+```
+

@@ -1,0 +1,33 @@
+Factory Pattern:
+
+Provides an interface for creating objects.
+Allows subclasses to alter the type of objects that will be created.
+Uses a single factory method for object creation.
+Primarily relies on inheritance for customization.
+Typically creates individual objects of a single type.
+Lower level of client code dependency.
+Used when a class wants to delegate the responsibility of object creation to its subclasses.
+Suitable for scenarios where you need to create different types of objects based on some input.
+
+
+Abstract Factory Pattern:
+
+Provides an interface for creating families of related or dependent objects.
+Ensures that created objects within a family are compatible with each other.
+Consists of multiple factory methods, each for a family of objects.
+Primarily uses object composition, allowing clients to choose the appropriate factory.
+Creates families of related objects.
+Higher level of client code dependency, as clients choose the factory to create objects.
+Used when a system needs to be independent of how its objects are created, composed, and represented.
+Suitable for scenarios where multiple families of objects need to be created, and their components should work together.
+
+
+Builder Pattern:
+
+Focuses on constructing a complex object step by step.
+Allows for the construction of different variations of a complex object.
+Typically has a single "director" class that orchestrates the construction process.
+Often used when an object needs to be constructed with a large number of optional or configurable components.
+Provides a fluent and method-chaining API for specifying the construction steps.
+Provides more fine-grained control over object construction.
+Commonly used for creating complex data structures or configurations, like creating a complex meal order with various options.

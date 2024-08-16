@@ -1,0 +1,47 @@
+In Go, both var totalWays [][]string and totalWays := [][]string{} declare an empty slice of slices of strings, but there's a subtle difference in how they are initialized.
+
+var totalWays [][]string:
+
+This declares the variable totalWays without initializing it. It will be assigned the zero value for slices, which is nil. So, at this point, totalWays is nil.
+totalWays := [][]string{}:
+
+This declares and initializes totalWays as an empty slice of slices of strings. After this line, totalWays is an empty slice with a length of 0, and it is not nil.
+
+package main
+
+import "fmt"
+
+func main() {
+	var totalWays1 [][]string
+	totalWays2 := [][]string{}
+
+	fmt.Println(totalWays1) // Prints: []
+	fmt.Println(totalWays2) // Prints: []
+}
+
+But totalWays1 is not available for use immediately - we need to initialise it - 
+var totalWays1 [][]string
+totalWays1 = make([][]string, 0)
+
+Caveat - The append function can handle a nil slice, and it will allocate the necessary underlying array when elements are appended.
+So below code is valid
+func helper(s string, wordDict []string) ([][]string, bool) {
+	if len(s) == 0 {
+		return [][]string{{}}, true
+	}
+
+	var totalWays = [][]string{}
+	for _, word := range wordDict {
+		if isPrefix(s, word) {
+			suffixWays, suffixPossible := helper(s[len(word):], wordDict)
+			if suffixPossible {
+				for _, suffix := range suffixWays {
+					newWay := append([]string{word}, suffix...)
+					totalWays = append(totalWays, newWay)
+				}
+			}
+		}
+	}
+
+	return totalWays, len(totalWays) > 0
+}

@@ -1,0 +1,34 @@
+@startuml
+' actor actor
+' agent agent
+' artifact artifact
+' card card
+' collections collections
+' component component
+' database database
+' file file
+' interface interface
+' label label
+' node node
+' person person
+' queue queue
+' rectangle rectangle
+' storage storage
+!define AWSPuml https://raw.githubusercontent.com/awslabs/aws-icons-for-plantuml/v11.1/dist
+!includeurl AWSPuml/AWSCommon.puml
+!includeurl AWSPuml/AWSSimplified.puml
+
+!includeurl AWSPuml/Compute/Lambda.puml
+Lambda(notify, 'motify', '') 
+!includeurl AWSPuml/ApplicationIntegration/SimpleNotificationServiceTopic.puml
+SimpleNotificationServiceTopic(notifySNS, 'notifySNS', 'Endpoint: xyz.com') 
+!include AWSPuml/Storage/SimpleStorageService.puml
+SimpleStorageService(S3, 'label', 'category')
+
+queue KafkaQueue
+
+KafkaQueue --> notifySNS
+notifySNS --> notify
+
+@enduml 
+
